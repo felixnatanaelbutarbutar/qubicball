@@ -40,6 +40,7 @@ export default function LoginPage() {
         try {
             const response = await api.post('/auth/login', values);
 <<<<<<< HEAD
+<<<<<<< HEAD
             const { token, user } = response.data; // Assuming backend returns { token, user } or similar, need to verify
             // Actually backend response from authHandler.Login usually returns just token or object.
             // Let's assume decoding or separate profile fetch. 
@@ -67,6 +68,9 @@ export default function LoginPage() {
 =======
             setAuth(response.data.token, response.data.user);
 >>>>>>> upstream/main
+=======
+            setAuth(response.data.token, response.data.user);
+>>>>>>> upstream/main
             toast.success('Login successful');
             router.push('/dashboard');
         } catch (error) {
@@ -76,6 +80,7 @@ export default function LoginPage() {
     }
 
     return (
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <Card className="w-[350px]">
@@ -119,6 +124,8 @@ export default function LoginPage() {
                 </CardContent>
             </Card>
 =======
+=======
+>>>>>>> upstream/main
         <div className="flex items-center justify-center min-h-screen w-full bg-background p-4">
             <div className="w-full max-w-sm">
                 <div className="flex flex-col text-center space-y-2 mb-6">
@@ -173,6 +180,9 @@ export default function LoginPage() {
                     </CardContent>
                 </Card>
             </div>
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
         </div>
     );

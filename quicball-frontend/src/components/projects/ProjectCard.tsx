@@ -7,6 +7,10 @@ import { useAuthStore } from '@/store/useAuthStore';
 import { useDeleteProject } from '@/hooks/useProjects';
 import Link from 'next/link';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import { EditProjectDialog } from './EditProjectDialog';
+>>>>>>> upstream/main
 =======
 import { EditProjectDialog } from './EditProjectDialog';
 >>>>>>> upstream/main
@@ -20,6 +24,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     const deleteProject = useDeleteProject();
 
     // Basic RBAC: Only Admin/Manager can delete
+<<<<<<< HEAD
 <<<<<<< HEAD
     const canDelete = user?.role === 'admin' || user?.role === 'manager';
 
@@ -56,6 +61,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 )}
             </CardFooter>
 =======
+=======
+>>>>>>> upstream/main
     const canEdit = user?.role === 'admin' || user?.role === 'manager';
 
     return (
@@ -109,6 +116,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     </Link>
                 </div>
             </div>
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
         </Card>
     );

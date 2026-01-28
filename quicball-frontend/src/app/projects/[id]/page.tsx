@@ -47,6 +47,7 @@ export default function ProjectDetailsPage() {
 
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="container mx-auto py-10 px-4">
             <div className="flex justify-between items-start mb-8">
                 <div>
@@ -70,6 +71,8 @@ export default function ProjectDetailsPage() {
                     <h3 className="font-semibold mb-4 text-green-700">Completed ({completedTasks.length})</h3>
                     {completedTasks.map(task => <TaskCard key={task.id} task={task} />)}
 =======
+=======
+>>>>>>> upstream/main
         <div className="min-h-screen bg-gray-50/50 pb-20">
             {/* Header */}
             <div className="bg-white border-b shadow-sm">
@@ -133,6 +136,9 @@ export default function ProjectDetailsPage() {
                             {completedTasks.length === 0 && <div className="text-center py-8 text-gray-400 text-sm italic border border-dashed rounded-lg">No tasks</div>}
                         </div>
                     </div>
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
                 </div>
             </div>

@@ -49,6 +49,7 @@ export default function RegisterPage() {
 
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <Card className="w-[350px]">
                 <CardHeader>
@@ -58,6 +59,8 @@ export default function RegisterPage() {
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
 =======
+=======
+>>>>>>> upstream/main
         <div className="flex items-center justify-center min-h-screen w-full bg-background p-6">
             <Card className="w-full max-w-md border-thin shadow-sm rounded-none md:rounded-lg overflow-hidden">
                 <CardHeader className="text-center space-y-4 pt-12 pb-8">
@@ -70,6 +73,9 @@ export default function RegisterPage() {
                 <CardContent className="px-8 pb-12">
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
                             <FormField
                                 control={form.control}
@@ -77,10 +83,13 @@ export default function RegisterPage() {
                                 render={({ field }) => (
                                     <FormItem>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <FormLabel>Name</FormLabel>
                                         <FormControl>
                                             <Input placeholder="John Doe" {...field} />
 =======
+=======
+>>>>>>> upstream/main
                                         <FormLabel className="small-caps text-muted-foreground">Full Name</FormLabel>
                                         <FormControl>
                                             <Input
@@ -88,6 +97,9 @@ export default function RegisterPage() {
                                                 {...field}
                                                 className="h-12 bg-transparent border-input rounded-md focus-visible:ring-offset-0 focus-visible:ring-1 focus-visible:ring-accent focus-visible:border-accent transition-colors"
                                             />
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
                                         </FormControl>
                                         <FormMessage />
@@ -100,10 +112,13 @@ export default function RegisterPage() {
                                 render={({ field }) => (
                                     <FormItem>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <FormLabel>Email</FormLabel>
                                         <FormControl>
                                             <Input placeholder="email@example.com" {...field} />
 =======
+=======
+>>>>>>> upstream/main
                                         <FormLabel className="small-caps text-muted-foreground">Email</FormLabel>
                                         <FormControl>
                                             <Input
@@ -111,6 +126,9 @@ export default function RegisterPage() {
                                                 {...field}
                                                 className="h-12 bg-transparent border-input rounded-md focus-visible:ring-offset-0 focus-visible:ring-1 focus-visible:ring-accent focus-visible:border-accent transition-colors"
                                             />
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
                                         </FormControl>
                                         <FormMessage />
@@ -123,10 +141,13 @@ export default function RegisterPage() {
                                 render={({ field }) => (
                                     <FormItem>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <FormLabel>Password</FormLabel>
                                         <FormControl>
                                             <Input type="password" {...field} />
 =======
+=======
+>>>>>>> upstream/main
                                         <FormLabel className="small-caps text-muted-foreground">Password</FormLabel>
                                         <FormControl>
                                             <Input
@@ -135,6 +156,9 @@ export default function RegisterPage() {
                                                 {...field}
                                                 className="h-12 bg-transparent border-input rounded-md focus-visible:ring-offset-0 focus-visible:ring-1 focus-visible:ring-accent focus-visible:border-accent transition-colors"
                                             />
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
                                         </FormControl>
                                         <FormMessage />
@@ -142,8 +166,13 @@ export default function RegisterPage() {
                                 )}
                             />
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <Button type="submit" className="w-full">
                                 Register
+=======
+                            <Button type="submit" className="w-full h-12 text-base font-medium tracking-wide bg-primary text-primary-foreground hover:bg-primary/90 transition-all rounded-md shadow-sm">
+                                Create Account
+>>>>>>> upstream/main
 =======
                             <Button type="submit" className="w-full h-12 text-base font-medium tracking-wide bg-primary text-primary-foreground hover:bg-primary/90 transition-all rounded-md shadow-sm">
                                 Create Account

@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 export default function DashboardPage() {
     const { data: projects, isLoading, error } = useProjects();
@@ -59,6 +60,8 @@ export default function DashboardPage() {
                 </div>
             )}
 =======
+=======
+>>>>>>> upstream/main
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
@@ -147,6 +150,9 @@ export default function DashboardPage() {
                     </div>
                 )}
             </main>
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
         </div>
     );

@@ -1,11 +1,18 @@
 import axios from 'axios';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import { useAuthStore } from '@/store/useAuthStore';
 >>>>>>> upstream/main
 
 const api = axios.create({
   baseURL: 'http://localhost:8080/api', // Adjust if backend runs on different port
+=======
+import { useAuthStore } from '@/store/useAuthStore';
+
+const api = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api', // Adjust if backend runs on different port
+>>>>>>> upstream/main
   headers: {
     'Content-Type': 'application/json',
   },
@@ -15,12 +22,15 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('token');
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
 =======
+=======
+>>>>>>> upstream/main
     // Import store dynamically or at top if circular dependency isn't an issue. 
     // Since store imports are usually fine, we can try top level, but for safety in this file:
     // actually, let's import at top.
@@ -40,6 +50,9 @@ api.interceptors.request.use(
     const token = useAuthStore.getState().token;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
     }
     return config;
@@ -55,6 +68,7 @@ api.interceptors.response.use(
       if (error.response.status === 401) {
         // Handle unauthorized (logout)
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (typeof window !== 'undefined') {
           localStorage.removeItem('token');
           // Optional: Redirect to login
@@ -66,10 +80,15 @@ api.interceptors.response.use(
         console.warn('Rate limit exceeded');
         // We can dispatch an event or use a toast here
 =======
+=======
+>>>>>>> upstream/main
         useAuthStore.getState().logout();
       }
       if (error.response.status === 429) {
         console.warn('Rate limit exceeded');
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
       }
     }

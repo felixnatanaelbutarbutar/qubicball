@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -115,6 +116,8 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 =======
+=======
+>>>>>>> upstream/main
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -225,11 +228,15 @@
   --border: hsl(240 3.7% 15.9%);
   --input: hsl(240 3.7% 15.9%);
   --ring: hsl(240 4.9% 83.9%);
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
 }
 
 @layer base {
   * {
+<<<<<<< HEAD
 <<<<<<< HEAD
     @apply border-border outline-ring/50;
   }
@@ -238,11 +245,17 @@
   }
 }
 =======
+=======
+>>>>>>> upstream/main
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+<<<<<<< HEAD
+}
+>>>>>>> upstream/main
+=======
 }
 >>>>>>> upstream/main

@@ -38,6 +38,10 @@ Navigate to the backend directory and start the services using Docker Compose:
 
 ```bash
 cd qubicball-backend
+<<<<<<< HEAD
+=======
+cp .env.example .env
+>>>>>>> upstream/main
 docker-compose up --build
 ```
 
@@ -49,6 +53,10 @@ Open a new terminal, navigate to the frontend directory, install dependencies, a
 
 ```bash
 cd quicball-frontend
+<<<<<<< HEAD
+=======
+cp .env.example .env.local
+>>>>>>> upstream/main
 npm install
 npm run dev
 ```

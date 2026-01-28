@@ -57,7 +57,11 @@ func (h *AuthHandler) Login(c *gin.Context) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	token, err := h.UserUsecase.Login(c.Request.Context(), request.Email, request.Password)
+=======
+	user, token, err := h.UserUsecase.Login(c.Request.Context(), request.Email, request.Password)
+>>>>>>> upstream/main
 =======
 	user, token, err := h.UserUsecase.Login(c.Request.Context(), request.Email, request.Password)
 >>>>>>> upstream/main
@@ -67,12 +71,18 @@ func (h *AuthHandler) Login(c *gin.Context) {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	c.JSON(http.StatusOK, gin.H{"token": token})
 =======
+=======
+>>>>>>> upstream/main
 	c.JSON(http.StatusOK, gin.H{
 		"token": token,
 		"user":  user,
 	})
+<<<<<<< HEAD
+>>>>>>> upstream/main
+=======
 >>>>>>> upstream/main
 }
 

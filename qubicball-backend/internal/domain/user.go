@@ -36,7 +36,11 @@ type UserRepository interface {
 type UserUsecase interface {
 	Register(ctx context.Context, user *User) error
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Login(ctx context.Context, email, password string) (string, error)
+=======
+	Login(ctx context.Context, email, password string) (*User, string, error)
+>>>>>>> upstream/main
 =======
 	Login(ctx context.Context, email, password string) (*User, string, error)
 >>>>>>> upstream/main

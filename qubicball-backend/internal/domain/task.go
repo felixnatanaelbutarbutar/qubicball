@@ -42,6 +42,10 @@ type TaskRepository interface {
 	MarkAsOverdue(ctx context.Context) error
 	GetByAssigneeID(ctx context.Context, assigneeID uint) ([]Task, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	GetByProjectIDAndAssigneeID(ctx context.Context, projectID uint, assigneeID uint) ([]Task, error)
+>>>>>>> upstream/main
 =======
 	GetByProjectIDAndAssigneeID(ctx context.Context, projectID uint, assigneeID uint) ([]Task, error)
 >>>>>>> upstream/main
@@ -56,6 +60,10 @@ type TaskUsecase interface {
 	MarkOverdueTasks(ctx context.Context) error
 	GetByAssigneeID(ctx context.Context, assigneeID uint) ([]Task, error)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	GetByProjectIDAndAssigneeID(ctx context.Context, projectID uint, assigneeID uint) ([]Task, error)
+>>>>>>> upstream/main
 =======
 	GetByProjectIDAndAssigneeID(ctx context.Context, projectID uint, assigneeID uint) ([]Task, error)
 >>>>>>> upstream/main
