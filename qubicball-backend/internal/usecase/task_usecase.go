@@ -71,6 +71,7 @@ func (u *taskUsecase) Update(c context.Context, task *domain.Task) error {
 	ctx, cancel := context.WithTimeout(c, u.contextTimeout)
 	defer cancel()
 
+<<<<<<< HEAD
 	// Get current task to know ProjectID in case it changed (rare but possible) or for invalidation
 	// We might not need this if we trust input ProjectID. Assuming task exists.
 	// Actually repo update might fail if version mismatch.
@@ -78,6 +79,43 @@ func (u *taskUsecase) Update(c context.Context, task *domain.Task) error {
 	err := u.taskRepo.Update(ctx, task)
 	if err == nil {
 		u.redisClient.Del(ctx, fmt.Sprintf("tasks:project:%d", task.ProjectID))
+=======
+	// 1. Fetch existing task
+	existingTask, err := u.taskRepo.GetByID(ctx, task.ID)
+	if err != nil {
+		return err
+	}
+
+	// 2. Merge changes (only update non-zero or specific fields)
+	if task.Title != "" {
+		existingTask.Title = task.Title
+	}
+	if task.Description != "" {
+		existingTask.Description = task.Description
+	}
+	if task.Status != "" {
+		existingTask.Status = task.Status
+	}
+	// Check if DueDate is not zero time
+	if !task.DueDate.IsZero() {
+		existingTask.DueDate = task.DueDate
+	}
+	if task.AssigneeID != nil {
+		existingTask.AssigneeID = task.AssigneeID
+	}
+	// Update version for optimistic locking
+	existingTask.Version = task.Version
+
+	err = u.taskRepo.Update(ctx, existingTask)
+	if err == nil {
+		u.redisClient.Del(ctx, fmt.Sprintf("tasks:project:%d", existingTask.ProjectID))
+		// If the project ID changed (unlikely in this app flow but possible), invalidate old one too
+		if existingTask.ProjectID != task.ProjectID && task.ProjectID != 0 {
+			u.redisClient.Del(ctx, fmt.Sprintf("tasks:project:%d", task.ProjectID))
+		}
+		// Update the pointer so the handler gets the updated data back
+		*task = *existingTask
+>>>>>>> upstream/main
 	}
 	return err
 }
@@ -133,3 +171,16 @@ func (u *taskUsecase) GetByAssigneeID(c context.Context, assigneeID uint) ([]dom
 
 	return u.taskRepo.GetByAssigneeID(ctx, assigneeID)
 }
+<<<<<<< HEAD
+=======
+
+func (u *taskUsecase) GetByProjectIDAndAssigneeID(c context.Context, projectID uint, assigneeID uint) ([]domain.Task, error) {
+	ctx, cancel := context.WithTimeout(c, u.contextTimeout)
+	defer cancel()
+
+	// Invalidate Project Cache? No, this is a read.
+	// Cache can be tricky here. For now, bypass cache or use specific key.
+	// Given the specific requirement, fetching from DB is safer to ensure privacy.
+	return u.taskRepo.GetByProjectIDAndAssigneeID(ctx, projectID, assigneeID)
+}
+>>>>>>> upstream/main

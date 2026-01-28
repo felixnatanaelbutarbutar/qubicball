@@ -37,7 +37,11 @@ export const useUpdateTask = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
+<<<<<<< HEAD
         mutationFn: async (task: { id: number; status?: TaskStatus; version: number; title?: string; description?: string }) => {
+=======
+        mutationFn: async (task: { id: number; status?: TaskStatus; version: number; title?: string; description?: string; due_date?: Date; assignee_id?: number }) => {
+>>>>>>> upstream/main
             return api.put(`/tasks/${task.id}`, task);
         },
         onSuccess: (_, variables) => {

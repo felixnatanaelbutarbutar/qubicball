@@ -32,7 +32,24 @@ func (h *TaskHandler) Create(c *gin.Context) {
 
 func (h *TaskHandler) GetByProjectID(c *gin.Context) {
 	projectID, _ := strconv.Atoi(c.Param("project_id"))
+<<<<<<< HEAD
 	tasks, err := h.TaskUsecase.GetByProjectID(c.Request.Context(), uint(projectID))
+=======
+
+	roleVal, exists := c.Get("role")
+	// Safe type assertion
+	var tasks []domain.Task
+	var err error
+
+	if exists && roleVal.(domain.Role) == domain.RoleMember {
+		userIDVal, _ := c.Get("user_id")
+		userID := userIDVal.(uint)
+		tasks, err = h.TaskUsecase.GetByProjectIDAndAssigneeID(c.Request.Context(), uint(projectID), userID)
+	} else {
+		tasks, err = h.TaskUsecase.GetByProjectID(c.Request.Context(), uint(projectID))
+	}
+
+>>>>>>> upstream/main
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
