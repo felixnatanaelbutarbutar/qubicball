@@ -71,18 +71,6 @@ func (u *taskUsecase) Update(c context.Context, task *domain.Task) error {
 	ctx, cancel := context.WithTimeout(c, u.contextTimeout)
 	defer cancel()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	// Get current task to know ProjectID in case it changed (rare but possible) or for invalidation
-	// We might not need this if we trust input ProjectID. Assuming task exists.
-	// Actually repo update might fail if version mismatch.
-
-	err := u.taskRepo.Update(ctx, task)
-	if err == nil {
-		u.redisClient.Del(ctx, fmt.Sprintf("tasks:project:%d", task.ProjectID))
-=======
-=======
->>>>>>> upstream/main
 	// 1. Fetch existing task
 	existingTask, err := u.taskRepo.GetByID(ctx, task.ID)
 	if err != nil {
@@ -118,10 +106,6 @@ func (u *taskUsecase) Update(c context.Context, task *domain.Task) error {
 		}
 		// Update the pointer so the handler gets the updated data back
 		*task = *existingTask
-<<<<<<< HEAD
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main
 	}
 	return err
 }
@@ -177,11 +161,6 @@ func (u *taskUsecase) GetByAssigneeID(c context.Context, assigneeID uint) ([]dom
 
 	return u.taskRepo.GetByAssigneeID(ctx, assigneeID)
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> upstream/main
 
 func (u *taskUsecase) GetByProjectIDAndAssigneeID(c context.Context, projectID uint, assigneeID uint) ([]domain.Task, error) {
 	ctx, cancel := context.WithTimeout(c, u.contextTimeout)
@@ -192,7 +171,3 @@ func (u *taskUsecase) GetByProjectIDAndAssigneeID(c context.Context, projectID u
 	// Given the specific requirement, fetching from DB is safer to ensure privacy.
 	return u.taskRepo.GetByProjectIDAndAssigneeID(ctx, projectID, assigneeID)
 }
-<<<<<<< HEAD
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main

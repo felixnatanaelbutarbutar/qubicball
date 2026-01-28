@@ -50,44 +50,20 @@ func (u *authUsecase) Register(c context.Context, user *domain.User) error {
 	return u.userRepo.Create(ctx, user)
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-func (u *authUsecase) Login(c context.Context, email, password string) (string, error) {
-=======
 func (u *authUsecase) Login(c context.Context, email, password string) (*domain.User, string, error) {
->>>>>>> upstream/main
-=======
-func (u *authUsecase) Login(c context.Context, email, password string) (*domain.User, string, error) {
->>>>>>> upstream/main
 	ctx, cancel := context.WithTimeout(c, u.contextTimeout)
 	defer cancel()
 
 	user, err := u.userRepo.GetByEmail(ctx, email)
 	if err != nil {
 		log.Printf("Login check: User not found for email %s: %v\n", email, err)
-<<<<<<< HEAD
-<<<<<<< HEAD
-		return "", errors.New("invalid email or password")
-=======
 		return nil, "", errors.New("invalid email or password")
->>>>>>> upstream/main
-=======
-		return nil, "", errors.New("invalid email or password")
->>>>>>> upstream/main
 	}
 
 	err = bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
 	if err != nil {
 		log.Printf("Login check: Password mismatch for user %s. Stored: %s, Input: %s. Error: %v\n", email, user.Password, password, err)
-<<<<<<< HEAD
-<<<<<<< HEAD
-		return "", errors.New("invalid email or password")
-=======
 		return nil, "", errors.New("invalid email or password")
->>>>>>> upstream/main
-=======
-		return nil, "", errors.New("invalid email or password")
->>>>>>> upstream/main
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
@@ -99,23 +75,10 @@ func (u *authUsecase) Login(c context.Context, email, password string) (*domain.
 
 	tokenString, err := token.SignedString([]byte(os.Getenv("JWT_SECRET")))
 	if err != nil {
-<<<<<<< HEAD
-<<<<<<< HEAD
-		return "", err
-	}
-
-	return tokenString, nil
-=======
-=======
->>>>>>> upstream/main
 		return nil, "", err
 	}
 
 	return user, tokenString, nil
-<<<<<<< HEAD
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main
 }
 
 func (u *authUsecase) GetProfile(c context.Context, id uint) (*domain.User, error) {

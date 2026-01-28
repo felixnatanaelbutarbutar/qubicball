@@ -94,15 +94,7 @@ export function CreateProjectDialog() {
                         />
                         <DialogFooter>
                             <Button type="submit" disabled={createProject.isPending}>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                Create
-=======
                                 {createProject.isPending ? 'Creating...' : 'Create Project'}
->>>>>>> upstream/main
-=======
-                                {createProject.isPending ? 'Creating...' : 'Create Project'}
->>>>>>> upstream/main
                             </Button>
                         </DialogFooter>
                     </form>

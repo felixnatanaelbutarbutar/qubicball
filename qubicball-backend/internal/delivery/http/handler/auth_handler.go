@@ -56,34 +56,16 @@ func (h *AuthHandler) Login(c *gin.Context) {
 		return
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	token, err := h.UserUsecase.Login(c.Request.Context(), request.Email, request.Password)
-=======
 	user, token, err := h.UserUsecase.Login(c.Request.Context(), request.Email, request.Password)
->>>>>>> upstream/main
-=======
-	user, token, err := h.UserUsecase.Login(c.Request.Context(), request.Email, request.Password)
->>>>>>> upstream/main
 	if err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": err.Error()})
 		return
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	c.JSON(http.StatusOK, gin.H{"token": token})
-=======
-=======
->>>>>>> upstream/main
 	c.JSON(http.StatusOK, gin.H{
 		"token": token,
 		"user":  user,
 	})
-<<<<<<< HEAD
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main
 }
 
 func (h *AuthHandler) GetProfile(c *gin.Context) {

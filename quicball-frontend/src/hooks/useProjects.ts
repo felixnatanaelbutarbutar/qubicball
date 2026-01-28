@@ -15,13 +15,6 @@ export const useProjects = () => {
             // Usually standard handlers return { data: [...] } or just [...]. 
             // Assuming array for now, or I'll debug.
             // Actually standard Go Gin handlers often return JSON.
-<<<<<<< HEAD
-<<<<<<< HEAD
-            // Let's assume it returns `data` or the array.
-=======
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main
             // I'll return `data` but cast it.
             return data;
         },
@@ -63,11 +56,6 @@ export const useDeleteProject = () => {
         },
     });
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> upstream/main
 
 export const useUpdateProject = () => {
     const queryClient = useQueryClient();
@@ -92,7 +80,3 @@ export const useUpdateProject = () => {
         },
     });
 };
-<<<<<<< HEAD
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main

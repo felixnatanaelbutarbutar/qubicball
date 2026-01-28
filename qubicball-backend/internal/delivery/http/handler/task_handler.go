@@ -32,12 +32,6 @@ func (h *TaskHandler) Create(c *gin.Context) {
 
 func (h *TaskHandler) GetByProjectID(c *gin.Context) {
 	projectID, _ := strconv.Atoi(c.Param("project_id"))
-<<<<<<< HEAD
-<<<<<<< HEAD
-	tasks, err := h.TaskUsecase.GetByProjectID(c.Request.Context(), uint(projectID))
-=======
-=======
->>>>>>> upstream/main
 
 	roleVal, exists := c.Get("role")
 	// Safe type assertion
@@ -52,10 +46,6 @@ func (h *TaskHandler) GetByProjectID(c *gin.Context) {
 		tasks, err = h.TaskUsecase.GetByProjectID(c.Request.Context(), uint(projectID))
 	}
 
-<<<<<<< HEAD
->>>>>>> upstream/main
-=======
->>>>>>> upstream/main
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
